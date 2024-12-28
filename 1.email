@@ -1,0 +1,11 @@
+import re
+sample_text = """hello my name is omesa,
+ds.omesa@gmail.com, var_sha[at]example.com
+"""
+pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+emails = re.findall(pattern, sample_text)
+for email in emails:
+    if re.fullmatch(pattern, email):  
+        print(f"{email}: Valid")
+    else:
+        print(f"{email}: Invalid")
